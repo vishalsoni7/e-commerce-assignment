@@ -2,37 +2,274 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: whitesmoke;
+  color: #222;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-parent-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-parent-div h2 {
+  cursor: pointer;
+  margin-left: 3rem;
+  font-weight: bolder;
+}
+
+.header-child-div {
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 3rem;
+}
+
+.header-child-div p {
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.header-child-div p::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #222;
+  transition: width 0.2s;
+}
+
+.header-child-div p:hover::before {
+  width: 100%;
+}
+
+.header-child-div h3 {
+  cursor: pointer;
+}
+
+.header-child-div h3:active {
+  color: crimson;
+}
+
+.landing-parent-div {
+  margin: 0rem;
+}
+
+.card-global {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0.5rem 0rem 0.5rem;
+}
+
+.global {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  object-fit: cover;
+}
+
+.global img {
+  width: 660px;
+  margin: 1.5rem 0.5rem 0rem 0.5rem;
+  object-fit: cover;
+  height: 450px;
+}
+
+.global h3 {
+  text-align: left;
+  margin-left: 1rem;
+  margin-bottom: 0;
+  letter-spacing: 3px;
+}
+
+.products-cart {
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 330px;
+  height: 30rem;
+}
+
+.products-cart span,
+p {
+  margin-left: 0.5rem;
+}
+
+.products-cart p {
+  font-weight: bold;
+  line-height: 0;
+}
+
+.products-cart span {
+  color: gray;
+}
+
+.span {
+  margin-top: 0.5rem;
+}
+
+.products-cart img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+}
+
+.products-cart-weight {
+  font-size: smaller;
+  color: gray;
+}
+
+.button-div {
+  margin-top: 1.3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.products-cart-button1 {
+  padding: 0.69rem;
+  width: 50%;
+  cursor: pointer;
+  border: none;
+  color: #252525;
+  border-right: none;
+  border-radius: 0px 0px 0px 5px;
+}
+
+.products-cart-button2 {
+  padding: 0.69rem;
+  width: 50%;
+  border: none;
+  cursor: pointer;
+  color: #252525;
+  border-radius: 0px 0px 5px 0px;
+}
+
+.products-cart button:active {
+  transform: scale(0.98);
+  background-color: gray;
+  color: whitesmoke;
+}
+
+.footer-parent-div {
+  margin-top: 2rem;
+  display: flex;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding: 3rem;
+  background-color: #252525;
+  color: whitesmoke;
+  background-image: url("../public/footerimg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.footer-parent-div h1 {
+  margin: 0;
+  font-size: 36px;
+  letter-spacing: 5px;
+}
+
+.footer-child-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.icons {
+  font-size: 1.8rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.icons a {
+  color: whitesmoke;
+}
+
+.table a {
+  color: whitesmoke;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  padding: 5px 15px 15px 30px;
+  text-align: left;
+}
+
+.table th {
+  transition: 0.2s;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.react-slideshow-container .default-nav:first-of-type {
+  display: none;
+}
+
+.react-slideshow-container .default-nav:last-of-type {
+  display: none;
+}
+
+.featured-div {
+  padding: 2rem 0rem;
+  margin: 0rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.featured-div h1 {
+  letter-spacing: 10px;
+  font-size: 46px;
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.featured-div p {
+  border-bottom: 1px solid #222;
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.landing-heading {
+  font-size: 66px;
+  margin-bottom: 0;
+  letter-spacing: 0;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  background: radial-gradient(circle, #e6dada, #274046, #e6dada);
+  background-size: 300% auto;
+  animation: gradientAnimation 15s linear infinite;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes gradientAnimation {
+  100% {
+    background-position: 0%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 70%;
   }
 }
