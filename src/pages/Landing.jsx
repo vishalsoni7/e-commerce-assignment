@@ -3,25 +3,16 @@ import { ECContext } from "../context/ECContext";
 
 import { ProductCart, CategoryCard } from "../component/cards";
 
-import { addWishList, addCart } from "../component/toast";
 import { Carousel } from "../component/corosel";
 import { Footer } from "./Footer";
+
+import { handleAddtoCart, handleAddtoWishlish } from "../component/utils";
 
 export const Landing = () => {
   const {
     ecDispatch,
     ecState: { products, category },
   } = useContext(ECContext);
-
-  const handleAddtoCart = (id) => {
-    ecDispatch({ type: "ADD_TO_CART", payload: id });
-    addCart();
-  };
-
-  const handleAddtoWishlish = (id) => {
-    ecDispatch({ type: "ADD_TO_WISHLISH", payload: id });
-    addWishList();
-  };
 
   return (
     <div className="landing-parent-div">
@@ -49,8 +40,8 @@ export const Landing = () => {
           <ProductCart
             key={item?.id}
             id={item?.id}
-            addCart={() => handleAddtoCart(item?.id)}
-            addWishList={() => handleAddtoWishlish(item?.id)}
+            addCart={() => handleAddtoCart(ecDispatch, item?.id)}
+            addWishList={() => handleAddtoWishlish(ecDispatch, item?.id)}
             image={item?.image}
             ideal={item?.ideal}
             name={item?.name}

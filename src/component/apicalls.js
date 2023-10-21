@@ -30,6 +30,7 @@ export const resgister = async (ecDispatch, userDetails, navigate) => {
       userDetails
     );
     ecDispatch({ type: "LOGIN", payload: response.data });
+    ecDispatch({ type: "LOGGED", payload: true });
     registerToast(response.data);
     navigate("/");
   } catch (error) {

@@ -3,15 +3,13 @@ import { ECContext } from "../context/ECContext";
 
 import { Card } from "../component/cards";
 
+import { removeFromCart } from "../component/utils";
+
 export const Cart = () => {
   const {
     ecState: { cart },
     ecDispatch,
   } = useContext(ECContext);
-
-  const removeFromCart = (id) => {
-    ecDispatch({ type: "REMOVE_FROM_CART", payload: id });
-  };
 
   return (
     <div className="cart-parent-div">
@@ -26,7 +24,7 @@ export const Cart = () => {
           <Card
             key={item?.id}
             item={item}
-            onRemove={() => removeFromCart(item?.id)}
+            onRemove={() => removeFromCart(ecDispatch, item?.id)}
           />
         ))}
       </div>

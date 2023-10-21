@@ -2,21 +2,14 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ECContext } from "../context/ECContext";
 
+import { handleLogout } from "../component/utils";
+
 export const User = () => {
   const navigate = useNavigate();
   const {
     ecState: { user },
     ecDispatch,
   } = useContext(ECContext);
-
-  const handleLogout = () => {
-    localStorage.removeItem("wishlist");
-    localStorage.removeItem("cart");
-    localStorage.removeItem("user");
-    localStorage.removeItem("logged");
-    ecDispatch({ type: "LOG_OUT", payload: false });
-    navigate("/login");
-  };
 
   return (
     <div className="user-parent-div">
@@ -28,7 +21,10 @@ export const User = () => {
       <p>User: {user?.phoneNumber} </p>
       <p>Address: {user?.address} </p>
 
-      <button onClick={handleLogout}> Log Out </button>
+      <button onClick={() => handleLogout(ecDispatch, navigate("/login"))}>
+        {" "}
+        Log Out{" "}
+      </button>
     </div>
   );
 };

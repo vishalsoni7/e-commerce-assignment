@@ -3,15 +3,13 @@ import { ECContext } from "../context/ECContext";
 
 import { Card } from "../component/cards";
 
+import { removefromWishlist } from "../component/utils";
+
 export const Wishlist = () => {
   const {
     ecState: { wishlist },
     ecDispatch,
   } = useContext(ECContext);
-
-  const removefromWishlist = (id) => {
-    ecDispatch({ type: "REMOVE_FROM_WISHLIST", payload: id });
-  };
 
   return (
     <div className="cart-parent-div">
@@ -26,7 +24,7 @@ export const Wishlist = () => {
           <Card
             key={item?.id}
             item={item}
-            onRemove={() => removefromWishlist(item?.id)}
+            onRemove={() => removefromWishlist(ecDispatch, item?.id)}
           />
         ))}
       </div>

@@ -43,8 +43,8 @@ export const loginErrorToast = () => {
   });
 };
 
-export const registerToast = (user) => {
-  toast.success(`${user.userName} Registered Successfully`, {
+export const registerToast = (data) => {
+  toast.success(`${data.userName} Registered Successfully`, {
     style: {
       borderRadius: "10px",
       background: "whitesmoke",
@@ -56,6 +56,39 @@ export const registerToast = (user) => {
 
 export const registerErrorToast = () => {
   toast.error("Missing fields or something went wrong!", {
+    style: {
+      borderRadius: "10px",
+      background: "whitesmoke",
+      color: "#222",
+      fontSize: "small",
+    },
+  });
+};
+
+export const removeCartToast = () => {
+  toast.error("Removed from cart!", {
+    style: {
+      borderRadius: "10px",
+      background: "whitesmoke",
+      color: "#222",
+      fontSize: "small",
+    },
+  });
+};
+
+export const removeWishlistToast = () => {
+  toast.error("Removed from wishlist!", {
+    style: {
+      borderRadius: "10px",
+      background: "whitesmoke",
+      color: "#222",
+      fontSize: "small",
+    },
+  });
+};
+
+export const logOut = () => {
+  toast.error("Logout Successfully!", {
     style: {
       borderRadius: "10px",
       background: "whitesmoke",

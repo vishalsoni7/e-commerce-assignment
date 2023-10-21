@@ -77,10 +77,13 @@ export const ecReducer = (state = initialState, action) => {
         logged: payload,
       };
 
-    case "LOG_OUT":
+    case "LOGOUT":
       return {
         ...state,
-        logged: payload,
+        logged: false,
+        wishlist: [],
+        cart: [],
+        user: {},
       };
 
     default:
