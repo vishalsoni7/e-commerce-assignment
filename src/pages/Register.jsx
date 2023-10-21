@@ -18,6 +18,7 @@ export const Register = () => {
     profilePic: "",
     userName: "",
     phoneNumber: "",
+    address: "",
   });
 
   const handleInput = (e) => {

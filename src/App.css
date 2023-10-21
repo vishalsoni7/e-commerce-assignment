@@ -441,6 +441,10 @@ p {
   width: -webkit-fill-available;
 }
 
+.login-container h2 {
+  margin: 0;
+}
+
 .login-container p {
   margin-bottom: 0;
   cursor: pointer;

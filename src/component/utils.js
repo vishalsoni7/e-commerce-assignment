@@ -26,7 +26,8 @@ export const removeFromCart = (ecDispatch, id) => {
   removeCartToast();
 };
 
-export const handleLogout = (ecDispatch) => {
-  logOut();
+export const handleLogout = (ecDispatch, navigate) => {
   ecDispatch({ type: "LOGOUT" });
+  logOut();
+  navigate("/");
 };

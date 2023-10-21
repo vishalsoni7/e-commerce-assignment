@@ -16,12 +16,10 @@ export const User = () => {
       <img src="user.svg" alt="user" />
 
       <h4>Name: {user?.userName} </h4>
-
       <p>Email: {user?.email} </p>
       <p>User: {user?.phoneNumber} </p>
-      <p>Address: {user?.address} </p>
 
-      <button onClick={() => handleLogout(ecDispatch, navigate("/login"))}>
+      <button onClick={() => handleLogout(ecDispatch, navigate)}>
         {" "}
         Log Out{" "}
       </button>
