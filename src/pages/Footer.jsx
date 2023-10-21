@@ -10,19 +10,32 @@ export const Footer = () => {
           aperiam saepe officiis laborum? <br /> Delectus, accusantium.
         </span>
         <div className="icons">
-          <a href="https://github.com/vishalsoni7" target="_blank">
+          <a
+            href="https://github.com/vishalsoni7"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="fa-brands fa-github font_awsome_logo" />{" "}
           </a>
           <a
             href="https://www.linkedin.com/in/vishal-soni-b21a4a1b8"
             target="_blank"
+            rel="noreferrer"
           >
             <i className="fa-brands fa-linkedin font_awsome_logo" />{" "}
           </a>
-          <a href="https://www.instagram.com/vishaallsoni/" target="_blank">
+          <a
+            href="https://www.instagram.com/vishaallsoni/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="fa-brands fa-instagram font_awsome_logo" />
           </a>
-          <a href="https://twitter.com/Vishsoni7" target="_blank">
+          <a
+            href="https://twitter.com/Vishsoni7"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="fa-brands fa-twitter font_awsome_logo" />
           </a>
         </div>

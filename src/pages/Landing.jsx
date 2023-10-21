@@ -1,10 +1,28 @@
-import { ProductCart } from "../component/cards";
+import { useContext } from "react";
+import { ECContext } from "../context/ECContext";
 
-import { productsData, category } from "../data";
+import { ProductCart, CategoryCard } from "../component/cards";
+
+import { addWishList, addCart } from "../component/toast";
 import { Carousel } from "../component/corosel";
 import { Footer } from "./Footer";
 
 export const Landing = () => {
+  const {
+    ecDispatch,
+    ecState: { products, category },
+  } = useContext(ECContext);
+
+  const handleAddtoCart = (id) => {
+    ecDispatch({ type: "ADD_TO_CART", payload: id });
+    addCart();
+  };
+
+  const handleAddtoWishlish = (id) => {
+    ecDispatch({ type: "ADD_TO_WISHLISH", payload: id });
+    addWishList();
+  };
+
   return (
     <div className="landing-parent-div">
       <Carousel />
@@ -13,13 +31,12 @@ export const Landing = () => {
 
       <div className="global">
         {category.map((item) => (
-          <div className="card" key={item.id}>
-            <h3> {item.category} </h3>
-            {item.img.map((p) => (
-              <img src={p} alt={p} />
-            ))}
-          </div>
-        ))}{" "}
+          <CategoryCard
+            key={item.id}
+            category={item.category}
+            images={item.img}
+          />
+        ))}
       </div>
 
       <div className="featured-div">
@@ -28,13 +45,16 @@ export const Landing = () => {
       </div>
 
       <div className="card-global">
-        {productsData.map((item) => (
+        {products?.map((item) => (
           <ProductCart
-            key={item.id}
-            image={item.image}
-            ideal={item.ideal}
-            name={item.name}
-            price={item.price}
+            key={item?.id}
+            id={item?.id}
+            addCart={() => handleAddtoCart(item?.id)}
+            addWishList={() => handleAddtoWishlish(item?.id)}
+            image={item?.image}
+            ideal={item?.ideal}
+            name={item?.name}
+            price={item?.price}
           />
         ))}
       </div>

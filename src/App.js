@@ -1,19 +1,22 @@
-import { Route, Routes } from "react-router-dom";
+import { useContext } from "react";
+import { ECContext } from "./context/ECContext";
 
-import { Landing } from "./pages/Landing";
+import { Routers } from "./component/routers";
 
-import "./App.css";
-import { Cart } from "./pages/Cart";
 import { Header } from "./pages/Header";
 
+import "./App.css";
+
 function App() {
+  const {
+    ecState: { logged },
+  } = useContext(ECContext);
+
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
+      {logged !== null && logged === true && <Header />}
+
+      <Routers />
     </div>
   );
 }

@@ -3,30 +3,30 @@ import { ECContext } from "../context/ECContext";
 
 import { Card } from "../component/cards";
 
-export const Cart = () => {
+export const Wishlist = () => {
   const {
-    ecState: { cart },
+    ecState: { wishlist },
     ecDispatch,
   } = useContext(ECContext);
 
-  const removeFromCart = (id) => {
-    ecDispatch({ type: "REMOVE_FROM_CART", payload: id });
+  const removefromWishlist = (id) => {
+    ecDispatch({ type: "REMOVE_FROM_WISHLIST", payload: id });
   };
 
   return (
     <div className="cart-parent-div">
-      {cart?.length > 0 && <h2> Cart </h2>}
+      {wishlist?.length > 0 && <h2>Wishlist</h2>}
 
-      {cart?.length === 0 && (
-        <h1 className="nothing"> Your Cart Is Empty !☹︎ </h1>
+      {wishlist?.length === 0 && (
+        <h1 className="nothing">Nothing in Wishlist !☹︎ </h1>
       )}
 
       <div className="cart-child-div">
-        {cart?.map((item) => (
+        {wishlist?.map((item) => (
           <Card
             key={item?.id}
             item={item}
-            onRemove={() => removeFromCart(item?.id)}
+            onRemove={() => removefromWishlist(item?.id)}
           />
         ))}
       </div>

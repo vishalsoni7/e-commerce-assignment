@@ -1,43 +1,66 @@
-import { addWishList, addCart } from "./toast";
-
 import { Toaster } from "react-hot-toast";
+import { NavLink } from "react-router-dom";
 
-export const CategoryCard = ({ id, image, category, price }) => {
+export const CategoryCard = ({ category, images }) => {
   return (
     <div className="card">
-      {image.map((item) => (
-        <img src={item} alt={item} />
-      ))}
-
+      {images.map((image, index) => (
+        <img key={index} src={image} alt={category} />
+      ))}{" "}
       <div className="card-info">
         <h3 className="category">{category}</h3>
-        <span className="price"> Starts at {price}</span>
       </div>
     </div>
   );
 };
 
-export const ProductCart = ({ ideal, name, price, image }) => {
+export const ProductCart = ({
+  id,
+  ideal,
+  name,
+  price,
+  image,
+  addCart,
+  addWishList,
+}) => {
   return (
-    <div className="product-card-div ">
-      <div className="products-cart ">
-        <img src={image} />
-        <span className="span"> {ideal} </span>
-        <p>{name} </p>
-        <span> $ {price} </span>
-
+    <div>
+      <div className="products-cart">
+        <NavLink className="link" to={`/product/${id}`}>
+          <img src={image} alt={image} />
+          <span className="span"> {ideal} </span>
+          <p>{name} </p>
+          <span> $ {price} </span>{" "}
+        </NavLink>
         <div className="button-div">
-          <button onClick={addWishList} className="products-cart-button1">
-            {" "}
+          <button
+            onClick={() => addWishList(id)}
+            className="products-cart-button1"
+          >
             Wishlist{" "}
           </button>
-          <button onClick={addCart} className="products-cart-button2">
-            {" "}
+          <button onClick={() => addCart(id)} className="products-cart-button2">
             Buy Now{" "}
           </button>{" "}
         </div>
       </div>
       <Toaster position="bottom-right" reverseOrder={false} />
+    </div>
+  );
+};
+
+export const Card = ({ item, onRemove }) => {
+  return (
+    <div className="cart-card" key={item?.id}>
+      <img src={item?.image} alt={item?.name} />
+
+      <div>
+        <h3> {item?.name} </h3>
+        <p> Ideal: {item?.ideal} </p>
+        <p> MRP: {item?.price} </p>
+        <br />
+        <button onClick={() => onRemove(item?.id)}> Remove </button>
+      </div>
     </div>
   );
 };

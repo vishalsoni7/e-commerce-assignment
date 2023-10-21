@@ -9,22 +9,28 @@ body {
   padding: 0;
 }
 
+.user-header {
+  margin: 0;
+  color: gray;
+}
+
 .header-parent-div {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 3rem 0 3rem;
 }
 
 .header-parent-div h2 {
   cursor: pointer;
-  margin-left: 3rem;
   font-weight: bolder;
 }
 
 .header-child-div {
   display: flex;
   gap: 1.5rem;
-  margin-right: 3rem;
+  cursor: pointer;
+  align-items: baseline;
 }
 
 .header-child-div p {
@@ -114,8 +120,13 @@ p {
   color: gray;
 }
 
-.span {
-  margin-top: 0.5rem;
+.link {
+  text-decoration: none;
+  color: #222;
+}
+
+.link span {
+  margin-top: 1rem;
 }
 
 .products-cart img {
@@ -272,4 +283,203 @@ p {
   50% {
     background-position: 70%;
   }
+}
+
+.product-parent-div {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 2rem;
+  text-align: left;
+}
+
+.product-parent-div p {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.product-parent-div span {
+  color: gray;
+}
+
+.product-parent-div img {
+  width: 700px;
+  height: 450px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.size {
+  border: 1.5px solid gainsboro;
+  color: #222;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 0.5rem 2.5rem;
+  margin: 1rem 1rem 1rem 0;
+  transition: background 0.3s, color 0.3s;
+}
+
+.size:hover {
+  background: whitesmoke;
+  color: #222;
+  border: 1.5px solid #222;
+}
+
+.product-child-div {
+  width: 40rem;
+}
+
+.button-hoverAndFoucusBtn {
+  color: white;
+  background: #2c3e50;
+  border: 2px solid#2C3E50;
+  border-radius: 50px;
+  padding: 0.5rem 2rem;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.button-hoverAndFoucusBtn:hover,
+.button-hoverAndFoucusBtn:focus {
+  transition: all 300ms ease-in-out;
+  border: 2px solid#2C3E50;
+  background: none;
+  color: #252525;
+}
+
+.button-outlineBtn {
+  color: #252525;
+  border: 1.5px solid #2c3e50;
+  border-radius: 50px;
+  padding: 0.5rem 2.5rem;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.button-outlineBtn:hover,
+.button-outlineBtn:focus {
+  color: white;
+  background: #2c3e50;
+  border: 2px solid#2C3E50;
+  transition: all 300ms ease-in-out;
+}
+
+.cart-parent-div {
+  margin: 0 3rem 0 3rem;
+  text-align: left;
+}
+
+.cart-child-div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.cart-card {
+  text-align: left;
+  border-radius: 12px;
+  display: flex;
+  width: 25rem;
+  padding: 5px;
+  gap: 1rem;
+  margin: 0 1rem 1rem 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cart-card img {
+  width: 12rem;
+  height: 12rem;
+}
+
+.cart-card p {
+  margin: 1rem 0 0.5rem 0;
+}
+
+.cart-card button {
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+  border-radius: 12px;
+  border: 1px solid gainsboro;
+  cursor: pointer;
+}
+
+.login-parent-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nothing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 200;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 20rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.login-container input {
+  padding: 0.5rem;
+  border: 1px solid gainsboro;
+  margin: 0.5rem 0 0 0;
+  border-radius: 5px;
+  width: -webkit-fill-available;
+}
+
+.login-container p {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.left-p {
+  text-align: left;
+}
+
+.login-container button {
+  padding: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  width: -webkit-fill-available;
+}
+
+.user-parent-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-parent-div img {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+}
+
+.user-parent-div h4 {
+  margin-top: 0;
+}
+
+.user-parent-div button {
+  padding: 0.5rem;
+  width: 8rem;
+  border-radius: 12px;
+  border: 0.5px solid;
+  cursor: pointer;
 }
