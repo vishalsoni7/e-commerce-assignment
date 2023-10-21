@@ -3,15 +3,19 @@ import { ECContext } from "../context/ECContext";
 
 import { useNavigate } from "react-router-dom";
 
+// Import the register function for making registration API calls
 import { resgister } from "../component/apicalls";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
+// Component for rendering the registration page
 export const Register = () => {
+  // Access the application context and navigation function
   const { ecDispatch } = useContext(ECContext);
   const navigate = useNavigate();
 
+  // Define local state to manage input fields
   const [input, setInput] = useState({
     email: "",
     password: "",
@@ -21,11 +25,13 @@ export const Register = () => {
     address: "",
   });
 
+  // Function to handle input changes and update the state
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
   };
 
+  // Function to perform the registration process
   const letMeIn = async (e) => {
     e.preventDefault();
     await resgister(ecDispatch, input, navigate);

@@ -1,6 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import { NavLink } from "react-router-dom";
 
+// Component for rendering a category card
 export const CategoryCard = ({ category, images }) => {
   return (
     <div className="card">
@@ -14,6 +15,7 @@ export const CategoryCard = ({ category, images }) => {
   );
 };
 
+// Component for rendering a product card
 export const ProductCart = ({
   id,
   ideal,
@@ -49,6 +51,7 @@ export const ProductCart = ({
   );
 };
 
+// Component for rendering a cart card
 export const Card = ({ item, onRemove }) => {
   return (
     <div className="cart-card" key={item?.id}>

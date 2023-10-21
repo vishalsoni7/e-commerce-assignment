@@ -1,14 +1,21 @@
 import { useContext } from "react";
 import { ECContext } from "../context/ECContext";
 
+// Import components for rendering product cards and category cards
 import { ProductCart, CategoryCard } from "../component/cards";
 
+// Import the Carousel component for displaying images
 import { Carousel } from "../component/corosel";
+
+// Import the Footer component
 import { Footer } from "./Footer";
 
+// Import functions for handling cart and wishlist actions
 import { handleAddtoCart, handleAddtoWishlish } from "../component/utils";
 
+// Component for rendering the landing page
 export const Landing = () => {
+  // Access the application state and dispatch function from the context
   const {
     ecDispatch,
     ecState: { products, category },

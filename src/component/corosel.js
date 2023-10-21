@@ -3,6 +3,7 @@ import "react-slideshow-image/dist/styles.css";
 
 import { coroselImages } from "../data";
 
+// Component for rendering a carousel of images
 export const Carousel = () => {
   return (
     <div className="slide-container" style={{ margin: "0rem 3rem 0rem 3rem" }}>

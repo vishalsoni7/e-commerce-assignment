@@ -1,3 +1,6 @@
+//
+//This is the footer part of the app with dummy data, and real social contact links
+//
 export const Footer = () => {
   return (
     <div className="footer-parent-div">

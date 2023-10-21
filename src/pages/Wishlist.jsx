@@ -1,11 +1,15 @@
 import { useContext } from "react";
 import { ECContext } from "../context/ECContext";
 
+// Import the Card component for rendering wishlist items
 import { Card } from "../component/cards";
 
+// Import the removefromWishlist function for handling item removal from wishlist
 import { removefromWishlist } from "../component/utils";
 
+// Component for rendering the Wishlist page
 export const Wishlist = () => {
+  // Access the application state and dispatch function from the context
   const {
     ecState: { wishlist },
     ecDispatch,

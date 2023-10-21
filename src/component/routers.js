@@ -8,8 +8,10 @@ import { Products } from "../pages/Product";
 import { Register } from "../pages/Register";
 import { Wishlist } from "../pages/Wishlist";
 
+// Import the RequireAuth component to protect routes
 import { RequireAuth } from "./requireauth";
 
+// Component that defines the application's routes
 export const Routers = () => {
   return (
     <>

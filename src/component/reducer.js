@@ -1,21 +1,26 @@
-import { productsData, categoryData } from "./data";
+import { productsData, categoryData } from "../data";
 
+// Retrieve wishlist data from local storage, or use an empty array if not present
 const wishlistFromLocalStorage = localStorage.getItem("wishlist")
   ? JSON.parse(localStorage.getItem("wishlist"))
   : [];
 
+// Retrieve cart data from local storage, or use an empty array if not present
 const cartFromLocalStorage = localStorage.getItem("cart")
   ? JSON.parse(localStorage.getItem("cart"))
   : [];
 
+// Retrieve user data from local storage, or use an empty object if not present
 const userFromLocalStorage = localStorage.getItem("user")
   ? JSON.parse(localStorage.getItem("user"))
   : [];
 
+// Retrieve login status from local storage, defaulting to false if not present
 const loggedFromLocalStorage = localStorage.getItem("logged")
   ? JSON.parse(localStorage.getItem("logged"))
   : false;
 
+// Define the initial state for your application's context
 export const initialState = {
   products: productsData,
   category: categoryData,
@@ -25,6 +30,7 @@ export const initialState = {
   logged: loggedFromLocalStorage,
 };
 
+// Define the reducer function to manage state changes
 export const ecReducer = (state = initialState, action) => {
   const { type, payload } = action;
 

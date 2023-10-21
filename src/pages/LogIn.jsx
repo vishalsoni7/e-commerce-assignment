@@ -3,25 +3,31 @@ import { useState, useContext } from "react";
 
 import { ECContext } from "../context/ECContext";
 
+// Import the login function for making login API calls
 import { login } from "../component/apicalls";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
+// Component for rendering the Login page
 export const Login = () => {
+  // Access the application context and useNavigate for enabling navigation
   const { ecDispatch } = useContext(ECContext);
   const navigate = useNavigate();
 
+  // Define local state to manage input fields
   const [input, setInput] = useState({
     email: "",
     password: "",
   });
 
+  // Function to handle input changes and update the state
   const handleInput = (e) => {
     const { name, value } = e.target;
     setInput({ ...input, [name]: value });
   };
 
+  // Function to perform the login process
   const letMeIn = async (e) => {
     e.preventDefault();
     await login(ecDispatch, input, navigate);
@@ -31,6 +37,7 @@ export const Login = () => {
     });
   };
 
+  // Function for guest login
   const iAmGuest = async (e) => {
     e.preventDefault();
     await login(

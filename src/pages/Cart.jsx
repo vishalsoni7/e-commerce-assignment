@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { ECContext } from "../context/ECContext";
 
+// Import the Card component for rendering cart items
 import { Card } from "../component/cards";
 
+// Component for rendering the Cart page
 import { removeFromCart } from "../component/utils";
 
 export const Cart = () => {
+  // Access the application state and dispatch function from the context
   const {
     ecState: { cart },
     ecDispatch,

@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// Import toast-related functions for displaying messages
 import {
   loginErrorToast,
   loginToast,
@@ -7,6 +8,7 @@ import {
   registerErrorToast,
 } from "./toast";
 
+// Function to handle user login
 export const login = async (ecDispatch, userDetails, navigate) => {
   try {
     const response = await axios.post(
@@ -23,6 +25,7 @@ export const login = async (ecDispatch, userDetails, navigate) => {
   }
 };
 
+// Function to handle user registration
 export const resgister = async (ecDispatch, userDetails, navigate) => {
   try {
     const response = await axios.post(

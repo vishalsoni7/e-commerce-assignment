@@ -10,10 +10,14 @@ import {
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 
+// Component for rendering the application header
 export const Header = () => {
+  // Access the user information from the application context
   const {
     ecState: { user },
   } = useContext(ECContext);
+
+  // Use the `useNavigate` hook to navigate to different routes
   const navigate = useNavigate();
   return (
     <div className="header-parent-div">

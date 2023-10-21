@@ -2,15 +2,19 @@ import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ECContext } from "../context/ECContext";
 
+// Import utility functions for adding items to cart and wishlist
 import { handleAddtoCart, handleAddtoWishlish } from "../component/utils";
 
+// Component for rendering the Product details page
 export const Products = () => {
+  // Access the application state, dispatch function, and route parameters
   const {
     ecState: { products },
     ecDispatch,
   } = useContext(ECContext);
   const { productId } = useParams();
 
+  // Find the product with the matching ID from the route parameters
   const findProduct = products.find((item) => item.id === +productId);
 
   return (
