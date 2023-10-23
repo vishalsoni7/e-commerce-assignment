@@ -21,7 +21,7 @@ export const User = () => {
 
       <h4>Name: {user?.userName} </h4>
       <p>Email: {user?.email} </p>
-      <p>User: {user?.phoneNumber} </p>
+      <p>Phone Number: {user?.phoneNumber} </p>
 
       <button onClick={() => handleLogout(ecDispatch, navigate)}>
         {" "}
