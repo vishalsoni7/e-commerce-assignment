@@ -8,8 +8,10 @@ import {
   registerErrorToast,
 } from "./toast";
 
-const baseURL =
-  "https://2a4c31e6-154e-4cd2-929b-c02f67222e6c-00-1ja4cwlzj3j4f.pike.replit.dev";
+// const baseURL =
+//   "https://2a4c31e6-154e-4cd2-929b-c02f67222e6c-00-1ja4cwlzj3j4f.pike.replit.dev";
+
+const baseURL = "https://e-commerce-backend-mu-dusky.vercel.app";
 
 // Function to handle user login
 export const login = async (ecDispatch, userDetails, navigate) => {

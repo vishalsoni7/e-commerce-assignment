@@ -27,7 +27,7 @@ export const Landing = () => {
   useEffect(() => {
     fetchCategories(ecDispatch);
     fetchProducts(ecDispatch);
-  }, []);
+  }, [ecDispatch]);
 
   return (
     <div className="landing-parent-div">
