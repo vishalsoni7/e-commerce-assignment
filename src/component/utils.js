@@ -6,7 +6,7 @@ import {
   logOut,
 } from "./toast";
 
-import { login } from "./apicalls";
+// import { login } from "./apicalls";
 
 // Function to add an item to the cart
 export const handleAddtoCart = (ecDispatch, id) => {
