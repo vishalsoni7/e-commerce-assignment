@@ -26,9 +26,9 @@ export const Wishlist = () => {
       <div className="cart-child-div">
         {wishlist?.map((item) => (
           <Card
-            key={item?.id}
+            key={item?._id}
             item={item}
-            onRemove={() => removefromWishlist(ecDispatch, item?.id)}
+            onRemove={() => removefromWishlist(ecDispatch, item?._id)}
           />
         ))}
       </div>

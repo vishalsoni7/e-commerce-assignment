@@ -17,7 +17,7 @@ export const CategoryCard = ({ category, images }) => {
 
 // Component for rendering a product card
 export const ProductCart = ({
-  id,
+  _id,
   ideal,
   name,
   price,
@@ -28,7 +28,7 @@ export const ProductCart = ({
   return (
     <div>
       <div className="products-cart">
-        <NavLink className="link" to={`/product/${id}`}>
+        <NavLink className="link" to={`/product/${_id}`}>
           <img src={image} alt={image} />
           <span className="span"> {ideal} </span>
           <p>{name} </p>
@@ -36,12 +36,15 @@ export const ProductCart = ({
         </NavLink>
         <div className="button-div">
           <button
-            onClick={() => addWishList(id)}
+            onClick={() => addWishList(_id)}
             className="products-cart-button1"
           >
             Wishlist{" "}
           </button>
-          <button onClick={() => addCart(id)} className="products-cart-button2">
+          <button
+            onClick={() => addCart(_id)}
+            className="products-cart-button2"
+          >
             Buy Now{" "}
           </button>{" "}
         </div>
@@ -54,7 +57,7 @@ export const ProductCart = ({
 // Component for rendering a cart card
 export const Card = ({ item, onRemove }) => {
   return (
-    <div className="cart-card" key={item?.id}>
+    <div className="cart-card" key={item?._id}>
       <img src={item?.image} alt={item?.name} />
 
       <div>
@@ -62,7 +65,7 @@ export const Card = ({ item, onRemove }) => {
         <p> Ideal: {item?.ideal} </p>
         <p> MRP: {item?.price} </p>
         <br />
-        <button onClick={() => onRemove(item?.id)}> Remove </button>
+        <button onClick={() => onRemove(item?._id)}> Remove </button>
       </div>
     </div>
   );

@@ -25,9 +25,9 @@ export const Cart = () => {
       <div className="cart-child-div">
         {cart?.map((item) => (
           <Card
-            key={item?.id}
+            key={item?._id}
             item={item}
-            onRemove={() => removeFromCart(ecDispatch, item?.id)}
+            onRemove={() => removeFromCart(ecDispatch, item?._id)}
           />
         ))}
       </div>

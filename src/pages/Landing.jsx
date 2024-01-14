@@ -1,8 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ECContext } from "../context/ECContext";
 
 // Import components for rendering product cards and category cards
 import { ProductCart, CategoryCard } from "../component/cards";
+
+// Import API-call function
+import { fetchCategories, fetchProducts } from "../component/apicalls";
 
 // Import the Carousel component for displaying images
 import { Carousel } from "../component/corosel";
@@ -21,6 +24,11 @@ export const Landing = () => {
     ecState: { products, category },
   } = useContext(ECContext);
 
+  useEffect(() => {
+    fetchCategories(ecDispatch);
+    fetchProducts(ecDispatch);
+  }, []);
+
   return (
     <div className="landing-parent-div">
       <Carousel />
@@ -30,7 +38,7 @@ export const Landing = () => {
       <div className="global">
         {category.map((item) => (
           <CategoryCard
-            key={item.id}
+            key={item._id}
             category={item.category}
             images={item.img}
           />
@@ -45,10 +53,10 @@ export const Landing = () => {
       <div className="card-global">
         {products?.map((item) => (
           <ProductCart
-            key={item?.id}
-            id={item?.id}
-            addCart={() => handleAddtoCart(ecDispatch, item?.id)}
-            addWishList={() => handleAddtoWishlish(ecDispatch, item?.id)}
+            key={item?._id}
+            id={item?._id}
+            addCart={() => handleAddtoCart(ecDispatch, item?._id)}
+            addWishList={() => handleAddtoWishlish(ecDispatch, item?._id)}
             image={item?.image}
             ideal={item?.ideal}
             name={item?.name}

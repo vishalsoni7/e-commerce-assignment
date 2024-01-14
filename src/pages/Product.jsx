@@ -15,7 +15,7 @@ export const Products = () => {
   const { productId } = useParams();
 
   // Find the product with the matching ID from the route parameters
-  const findProduct = products.find((item) => item.id === +productId);
+  const findProduct = products.find((item) => item._id === +productId);
 
   return (
     <div className="product-parent-div">
@@ -37,14 +37,14 @@ export const Products = () => {
         <p> {findProduct?.description} </p>
         <div>
           <button
-            onClick={() => handleAddtoCart(ecDispatch, findProduct?.id)}
+            onClick={() => handleAddtoCart(ecDispatch, findProduct?._id)}
             className="button-hoverAndFoucusBtn"
           >
             {" "}
             Add to Cart{" "}
           </button>
           <button
-            onClick={() => handleAddtoWishlish(ecDispatch, findProduct?.id)}
+            onClick={() => handleAddtoWishlish(ecDispatch, findProduct?._id)}
             className="button-outlineBtn"
           >
             {" "}

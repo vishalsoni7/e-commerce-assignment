@@ -28,9 +28,9 @@ export const Login = () => {
   };
 
   // Function to perform the login process
-  const letMeIn = async (e) => {
+  const letMeIn = (e) => {
     e.preventDefault();
-    await login(ecDispatch, input, navigate);
+    login(ecDispatch, input, navigate);
     setInput({
       email: "",
       password: "",
@@ -38,9 +38,9 @@ export const Login = () => {
   };
 
   // Function for guest login
-  const iAmGuest = async (e) => {
+  const iAmGuest = (e) => {
     e.preventDefault();
-    await login(
+    login(
       ecDispatch,
       { email: "user@example.com", password: "newpassword" },
       navigate

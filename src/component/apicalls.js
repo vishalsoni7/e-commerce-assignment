@@ -38,3 +38,23 @@ export const resgister = async (ecDispatch, userDetails, navigate) => {
     registerErrorToast();
   }
 };
+
+// Function to fetch category data
+export const fetchCategories = async (ecDispatch) => {
+  try {
+    const response = await axios.get(`${baseURL}/categories`);
+    ecDispatch({ type: "FETCH_CATEGORY", payload: response?.data });
+  } catch (error) {
+    console.log({ error });
+  }
+};
+
+// Function to fetch product data
+export const fetchProducts = async (ecDispatch) => {
+  try {
+    const response = await axios.get(`${baseURL}/products`);
+    ecDispatch({ type: "FETCH_PRODUCTS", payload: response?.data });
+  } catch (error) {
+    console.log({ error });
+  }
+};
