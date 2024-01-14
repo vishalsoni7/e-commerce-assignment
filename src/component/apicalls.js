@@ -14,7 +14,11 @@ const baseURL =
 // Function to handle user login
 export const login = async (ecDispatch, userDetails, navigate) => {
   try {
-    const response = await axios.post(`${baseURL}/login`, userDetails);
+    const response = await axios.post(`${baseURL}/login`, userDetails, {
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    });
     ecDispatch({ type: "LOGIN", payload: response.data });
     ecDispatch({ type: "LOGGED", payload: true });
     loginToast();

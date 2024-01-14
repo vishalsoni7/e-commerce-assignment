@@ -47,6 +47,8 @@ export const Login = () => {
     );
   };
 
+  console.log(input);
+
   return (
     <div className="login-parent-div">
       <div className="login-container">
